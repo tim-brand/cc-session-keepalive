@@ -33,8 +33,8 @@ EXPOSE 3000
 
 # Set environment defaults
 ENV PORT=3000
-# Default: 4 hours
-ENV PROMPT_INTERVAL_MS=14400000
+# Default: 1 hour
+ENV PROMPT_INTERVAL_MS=3600000
 
 # Run the service
 CMD ["bun", "run", "src/index.ts"]

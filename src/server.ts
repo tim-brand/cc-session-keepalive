@@ -24,13 +24,18 @@ export function createServer(config: Config) {
 
     return c.json({
       isRunning: state.isRunning,
+      isInSilenceHours: state.isInSilenceHours,
       promptCount: state.promptCount,
+      skippedDueToSilence: state.skippedDueToSilence,
       lastPromptSent: state.lastPromptSent?.toISOString() ?? null,
       lastPromptSuccess: state.lastPromptSuccess,
       lastError: state.lastError,
       config: {
         promptIntervalMs: config.promptIntervalMs,
         promptIntervalHours: intervalHours,
+        timezone: config.timezone,
+        silenceStart: config.silenceStart,
+        silenceEnd: config.silenceEnd,
       },
     });
   });
