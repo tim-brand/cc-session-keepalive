@@ -1,5 +1,5 @@
 export interface Config {
-  oauthToken: string;
+  sessionKey: string;
   promptIntervalMs: number;
   port: number;
   timezone: string;
@@ -8,9 +8,9 @@ export interface Config {
 }
 
 export function loadConfig(): Config {
-  const oauthToken = process.env.CLAUDE_CODE_OAUTH_TOKEN;
-  if (!oauthToken) {
-    throw new Error("CLAUDE_CODE_OAUTH_TOKEN environment variable is required");
+  const sessionKey = process.env.SESSION_KEY;
+  if (!sessionKey) {
+    throw new Error("SESSION_KEY environment variable is required (extract from claude.ai cookies)");
   }
 
   // Default: 1 hour (3600000ms), minimum: 30 seconds (30000ms)
@@ -38,7 +38,7 @@ export function loadConfig(): Config {
   }
 
   return {
-    oauthToken,
+    sessionKey,
     promptIntervalMs,
     port,
     timezone,

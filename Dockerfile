@@ -1,21 +1,5 @@
 FROM oven/bun:1 AS base
-
 WORKDIR /app
-
-# Install Node.js for Claude Code CLI (npm package)
-RUN apt-get update && apt-get install -y \
-    curl \
-    && curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
-    && apt-get install -y nodejs \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-# Install Claude Code CLI globally
-RUN npm install -g @anthropic-ai/claude-code
-
-# Create Claude config directory and set up for headless operation
-RUN mkdir -p /root/.claude && \
-    echo '{"hasCompletedOnboarding": true}' > /root/.claude.json
 
 # Install dependencies
 FROM base AS install

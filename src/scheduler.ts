@@ -1,4 +1,4 @@
-import { sendHelloPrompt } from "./claude";
+import { sendKeepAlive } from "./claude";
 import type { Config } from "./config";
 
 export interface SchedulerState {
@@ -77,9 +77,9 @@ async function sendPromptIfAllowed(config: Config): Promise<void> {
     return;
   }
 
-  console.log("[Scheduler] Sending keepalive prompt...");
+  console.log("[Scheduler] Sending keepalive...");
 
-  const result = await sendHelloPrompt();
+  const result = await sendKeepAlive(config);
   state.lastPromptSent = new Date();
   state.promptCount++;
 
