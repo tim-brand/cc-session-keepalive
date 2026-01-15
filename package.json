@@ -1,0 +1,18 @@
+{
+  "name": "cc-session-keepalive",
+  "version": "1.0.0",
+  "description": "Service to keep Claude Code sessions alive by monitoring usage and triggering new sessions",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "hono": "^4.7.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.7.0"
+  }
+}
