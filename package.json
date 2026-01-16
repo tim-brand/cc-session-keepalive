@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "bun run --watch src/index.ts",
     "start": "bun run src/index.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "version:check": "git describe --tags --abbrev=0 2>/dev/null || echo 'No releases yet'"
   },
   "dependencies": {
     "hono": "^4.7.0"
