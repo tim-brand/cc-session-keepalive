@@ -1,7 +1,7 @@
 {
   "name": "cc-session-keepalive",
   "version": "1.0.0",
-  "description": "Service to keep Claude Code sessions alive by monitoring usage and triggering new sessions",
+  "description": "Service to keep Claude Code sessions alive",
   "type": "module",
   "author": "Tim Brand <t.brand@gmail.com>",
   "scripts": {
