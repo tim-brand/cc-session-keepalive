@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Service to keep Claude Code sessions alive by monitoring usage and triggering new sessions",
   "type": "module",
+  "author": "Tim Brand <t.brand@gmail.com>",
   "scripts": {
     "dev": "bun run --watch src/index.ts",
     "start": "bun run src/index.ts",
